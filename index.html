@@ -3,637 +3,471 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swapnil Aswale — AI Platform Architect</title>
-  <meta name="description" content="Swapnil Aswale — AI Platform Architect, Founder of Aiventry Technologies, builder of AgentLab. Self-improving AI agents, multi-agent orchestration, and production-grade platforms.">
+  <title>Swapnil Aswale — AI Platform Architect & Founder</title>
+  <meta name="description" content="Swapnil Aswale — AI Platform Architect, Founder of Aiventry Technologies, builder of AgentLab. Self-improving AI agents, multi-agent orchestration, production SaaS, and AI for India.">
   <meta name="author" content="Swapnil Aswale">
-  <meta property="og:title" content="Swapnil Aswale — AI Platform Architect">
-  <meta property="og:description" content="I build self-improving AI agents and production-grade platforms.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
   <style>
-    /* ── Reset & Base ── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0a0a0f;
-      color: #e2e8f0;
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #fafaf9;
+      color: #1c1917;
+      line-height: 1.65;
+      font-size: 1rem;
     }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; }
+    a { color: #0d9488; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* ── Nav ── */
+    /* Nav */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 1rem 2rem;
+      padding: 1rem 1.5rem;
       display: flex; align-items: center; justify-content: space-between;
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      background: rgba(10, 10, 15, 0.7);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: background 0.3s;
+      background: rgba(250,250,249,0.92);
+      border-bottom: 1px solid #e7e5e4;
     }
-    .nav-logo { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.5px; }
-    .nav-logo span { background: linear-gradient(135deg, #818cf8, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.875rem; font-weight: 500; color: #94a3b8; transition: color 0.2s; }
-    .nav-links a:hover { color: #e2e8f0; }
-    .nav-toggle { display: none; background: none; border: none; color: #e2e8f0; cursor: pointer; }
+    .nav-logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem; color: #1c1917; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: #57534e; }
+    .nav-links a:hover { color: #0d9488; }
+    .nav-toggle { display: none; border: none; background: none; cursor: pointer; color: #44403c; }
 
-    /* ── Hero ── */
+    /* Hero — split layout */
     .hero {
-      min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem;
+      padding: 6rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139,92,246,0.1) 0%, transparent 50%);
-      animation: heroGlow 8s ease-in-out infinite alternate;
+    .hero-text h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 1rem; color: #1c1917; }
+    .hero-text .role { font-size: 1.05rem; color: #0d9488; font-weight: 600; margin-bottom: 1.25rem; }
+    .hero-text .bio {
+      font-size: 1rem; color: #57534e; max-width: 480px; margin-bottom: 1.5rem;
     }
-    @keyframes heroGlow {
-      0%   { opacity: 0.7; transform: scale(1); }
-      100% { opacity: 1;   transform: scale(1.05); }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .hero-meta span {
+      font-size: 0.85rem; color: #78716c;
+      padding: 0.35rem 0.85rem; background: #f5f5f4; border-radius: 6px;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 720px; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 500;
-      background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); color: #a5b4fc;
-      margin-bottom: 1.5rem;
-    }
-    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #818cf8; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 1rem; }
-    .hero h1 .gradient { background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p.subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: #94a3b8; max-width: 560px; margin: 0 auto 2rem; }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2.5rem; }
-    .hero-meta .tag {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-size: 0.82rem; color: #94a3b8; padding: 0.3rem 0.85rem;
-      border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-    }
-    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.7rem 1.6rem; border-radius: 10px; font-size: 0.9rem; font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.65rem 1.35rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600;
+      transition: opacity 0.2s, transform 0.2s; cursor: pointer; border: none;
     }
-    .btn-primary {
-      background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
-      box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+    .btn-primary { background: #0d9488; color: #fff; }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: #1c1917; border: 2px solid #d6d3d1; }
+    .btn-outline:hover { border-color: #0d9488; color: #0d9488; }
+    .hero-visual {
+      background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 50%, #5eead4 100%);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid #a7f3d0;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(99,102,241,0.45); }
-    .btn-outline {
-      background: transparent; color: #e2e8f0;
-      border: 1px solid rgba(255,255,255,0.15);
+    .hero-visual .stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
+    .hero-visual .stat-box {
+      background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 12px;
+      text-align: center; border: 1px solid rgba(0,0,0,0.06);
     }
-    .btn-outline:hover { background: rgba(255,255,255,0.05); transform: translateY(-2px); }
-    .scroll-indicator {
-      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-      width: 24px; height: 40px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2);
-    }
-    .scroll-indicator::after {
-      content: ''; display: block; width: 4px; height: 8px; border-radius: 2px;
-      background: rgba(255,255,255,0.4); margin: 6px auto 0;
-      animation: scrollBounce 2s infinite;
-    }
-    @keyframes scrollBounce { 0%,100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(10px); opacity: 0.3; } }
+    .hero-visual .stat-num { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 700; color: #0f766e; }
+    .hero-visual .stat-lbl { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; }
 
-    /* ── Section Common ── */
-    section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
-      color: #818cf8; margin-bottom: 0.75rem;
-    }
-    .section-title { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem; }
-    .section-desc { color: #94a3b8; max-width: 600px; margin-bottom: 3rem; font-size: 1rem; }
+    /* Section common */
+    section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .sec-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #0d9488; margin-bottom: 0.5rem; }
+    .sec-title { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.75rem; color: #1c1917; }
+    .sec-desc { color: #57534e; margin-bottom: 2rem; max-width: 640px; font-size: 1rem; }
 
-    /* ── Products ── */
+    /* About */
+    .about-block {
+      background: #fff; border-radius: 16px; padding: 2rem;
+      border: 1px solid #e7e5e4; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .about-block p { margin-bottom: 1rem; color: #44403c; }
+    .about-block p:last-child { margin-bottom: 0; }
+    .about-block strong { color: #1c1917; }
+
+    /* Platform / AgentLab */
+    .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .platform-card {
+      background: #fff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .platform-card h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; color: #0d9488; margin-bottom: 0.5rem; }
+    .platform-card p { font-size: 0.9rem; color: #57534e; line-height: 1.5; }
+    .platform-list { list-style: none; }
+    .platform-list li {
+      font-size: 0.9rem; color: #44403c; padding: 0.5rem 0;
+      border-bottom: 1px solid #f5f5f4;
+      display: flex; align-items: flex-start; gap: 0.5rem;
+    }
+    .platform-list li:last-child { border-bottom: none; }
+    .platform-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #0d9488; margin-top: 0.5rem; flex-shrink: 0; }
+
+    /* Microservices table */
+    .table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 12px; border: 1px solid #e7e5e4; background: #fff; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #f5f5f4; }
+    th { background: #fafaf9; font-weight: 600; color: #44403c; }
+    td { color: #57534e; }
+    tr:last-child td { border-bottom: none; }
+
+    /* Products — 2-col cards with more detail */
     .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     .product-card {
-      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 16px; padding: 1.75rem; position: relative; overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      background: #fff; border: 1px solid #e7e5e4; border-radius: 14px; padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
-    .product-card:hover {
-      transform: translateY(-4px); border-color: rgba(99,102,241,0.3);
-      box-shadow: 0 8px 32px rgba(99,102,241,0.1);
-    }
-    .product-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .product-card:hover::before { opacity: 1; }
-    .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem; }
-    .card-icon {
-      width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; flex-shrink: 0;
-    }
-    .status-pill {
-      font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px;
-      text-transform: uppercase; letter-spacing: 0.5px;
-    }
-    .status-live { background: rgba(34,197,94,0.15); color: #4ade80; }
-    .status-dev { background: rgba(234,179,8,0.15); color: #facc15; }
-    .status-poc { background: rgba(99,102,241,0.15); color: #a5b4fc; }
-    .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; }
-    .card-desc { font-size: 0.88rem; color: #94a3b8; margin-bottom: 1rem; line-height: 1.5; }
-    .card-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-    .tech-tag {
-      font-size: 0.72rem; font-weight: 500; padding: 0.2rem 0.55rem; border-radius: 6px;
-      background: rgba(255,255,255,0.06); color: #cbd5e1;
-    }
-    .card-link {
-      font-size: 0.82rem; font-weight: 600; color: #818cf8;
-      display: inline-flex; align-items: center; gap: 0.3rem; transition: gap 0.2s;
-    }
-    .card-link:hover { gap: 0.6rem; }
-    .card-link svg { width: 14px; height: 14px; }
+    .product-card:hover { box-shadow: 0 4px 12px rgba(13,148,136,0.08); border-color: #99f6e4; }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+    .card-title { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700; color: #1c1917; }
+    .status { font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 999px; text-transform: uppercase; }
+    .status-live { background: #d1fae5; color: #047857; }
+    .status-dev { background: #fef3c7; color: #b45309; }
+    .status-poc { background: #e0f2fe; color: #0369a1; }
+    .card-desc { font-size: 0.88rem; color: #57534e; margin-bottom: 0.75rem; line-height: 1.5; }
+    .card-features { font-size: 0.8rem; color: #78716c; margin-bottom: 0.75rem; }
+    .card-features ul { margin-left: 1rem; margin-top: 0.25rem; }
+    .card-link { font-size: 0.85rem; font-weight: 600; color: #0d9488; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .card-link:hover { text-decoration: none; }
 
-    /* ── Skills ── */
-    .skills-section { padding-bottom: 3rem; }
-    .skills-group { margin-bottom: 2rem; }
-    .skills-group-title {
-      font-size: 0.82rem; font-weight: 600; color: #64748b; text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: 0.75rem;
-      display: flex; align-items: center; gap: 0.5rem;
+    /* What I Build With AI */
+    .build-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .build-item {
+      background: #fff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.25rem;
+      display: flex; gap: 0.75rem; align-items: flex-start;
     }
-    .skills-group-title::after {
-      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.06);
+    .build-item .num { font-family: 'Fraunces', serif; font-weight: 700; color: #0d9488; font-size: 1.1rem; flex-shrink: 0; }
+    .build-item .title { font-weight: 600; color: #1c1917; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .build-item .text { font-size: 0.85rem; color: #57534e; line-height: 1.5; }
+
+    /* Numbers strip */
+    .numbers-strip {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
+      padding: 2rem 1.5rem; background: #134e4a; color: #fff; border-radius: 16px;
+      margin: 0 1.5rem 4rem; max-width: 1100px; margin-left: auto; margin-right: auto;
     }
-    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .numbers-strip .n-num { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 700; }
+    .numbers-strip .n-lbl { font-size: 0.75rem; opacity: 0.85; margin-top: 0.2rem; }
+
+    /* Skills — compact pills */
+    .skills-cat { margin-bottom: 1.5rem; }
+    .skills-cat h4 { font-size: 0.8rem; font-weight: 600; color: #78716c; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .skills-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .skill-pill {
-      font-size: 0.85rem; font-weight: 500; padding: 0.45rem 1rem; border-radius: 10px;
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      color: #cbd5e1; transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      font-size: 0.8rem; padding: 0.35rem 0.75rem; border-radius: 6px;
+      background: #f5f5f4; color: #44403c; border: 1px solid #e7e5e4;
     }
-    .skill-pill:hover {
-      border-color: rgba(99,102,241,0.4); background: rgba(99,102,241,0.08);
-      transform: translateY(-2px);
-    }
-    .skill-pill.highlight {
-      background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.3); color: #a5b4fc;
-    }
+    .skill-pill.hl { background: #ccfbf1; color: #0f766e; border-color: #99f6e4; }
 
-    /* ── Stats ── */
-    .stats-bar {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-      margin-bottom: 4rem; padding: 2rem; border-radius: 16px;
-      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
-    }
-    .stat { text-align: center; }
-    .stat-number {
-      font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -1px;
-      background: linear-gradient(135deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .stat-label { font-size: 0.78rem; color: #64748b; margin-top: 0.25rem; font-weight: 500; }
+    /* Timeline — simple left line */
+    .timeline { position: relative; padding-left: 1.5rem; border-left: 2px solid #e7e5e4; margin-left: 0.25rem; }
+    .tl-item { margin-bottom: 1.75rem; position: relative; }
+    .tl-item::before { content: ''; position: absolute; left: -1.65rem; top: 0.35rem; width: 10px; height: 10px; border-radius: 50%; background: #0d9488; }
+    .tl-date { font-size: 0.75rem; font-weight: 600; color: #0d9488; margin-bottom: 0.2rem; }
+    .tl-title { font-size: 1rem; font-weight: 700; color: #1c1917; margin-bottom: 0.2rem; }
+    .tl-desc { font-size: 0.88rem; color: #57534e; line-height: 1.5; }
 
-    /* ── Timeline ── */
-    .timeline { position: relative; padding: 1rem 0; }
-    .timeline::before {
-      content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
-      width: 2px; background: linear-gradient(180deg, rgba(99,102,241,0.4), rgba(139,92,246,0.1));
-      transform: translateX(-50%);
+    /* Agent templates + Domains + Contact */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .list-plain { list-style: none; }
+    .list-plain li { font-size: 0.9rem; color: #44403c; padding: 0.4rem 0; border-bottom: 1px solid #f5f5f4; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .list-plain li:last-child { border-bottom: none; }
+    .list-plain a { font-weight: 500; }
+    .domains-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .domains-grid a {
+      display: block; padding: 0.75rem 1rem; background: #f5f5f4; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 500; color: #1c1917; border: 1px solid #e7e5e4;
     }
-    .tl-item {
-      display: flex; align-items: flex-start; margin-bottom: 2.5rem; position: relative;
-      width: 50%; padding: 0 2.5rem;
-    }
-    .tl-item:nth-child(odd) { align-self: flex-start; text-align: right; margin-left: 0; padding-right: 3rem; }
-    .tl-item:nth-child(even) { align-self: flex-end; margin-left: 50%; padding-left: 3rem; }
-    .tl-dot {
-      position: absolute; top: 0.3rem; width: 14px; height: 14px; border-radius: 50%;
-      background: #6366f1; border: 3px solid #0a0a0f; z-index: 2;
-    }
-    .tl-item:nth-child(odd) .tl-dot { right: -7px; }
-    .tl-item:nth-child(even) .tl-dot { left: -7px; }
-    .tl-date { font-size: 0.78rem; font-weight: 600; color: #818cf8; margin-bottom: 0.35rem; }
-    .tl-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .tl-desc { font-size: 0.85rem; color: #94a3b8; line-height: 1.5; }
+    .domains-grid a:hover { background: #ccfbf1; border-color: #99f6e4; color: #0f766e; text-decoration: none; }
 
-    /* ── Footer ── */
-    .footer {
-      text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.06);
-      margin-top: 2rem;
+    .contact-box {
+      background: #fff; border: 1px solid #e7e5e4; border-radius: 14px; padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
-    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
-    .footer-links a {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 42px; height: 42px; border-radius: 10px;
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
-      color: #94a3b8; transition: color 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .footer-links a:hover { color: #e2e8f0; border-color: rgba(99,102,241,0.4); transform: translateY(-2px); }
-    .footer-links a svg { width: 18px; height: 18px; }
-    .footer p { font-size: 0.82rem; color: #475569; }
+    .contact-box h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1c1917; }
+    .contact-box p { font-size: 0.9rem; color: #57534e; margin-bottom: 0.5rem; }
+    .contact-box a { font-weight: 600; }
 
-    /* ── Reveal Animation ── */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    /* Footer */
+    .footer { text-align: center; padding: 2.5rem 1.5rem; border-top: 1px solid #e7e5e4; margin-top: 2rem; color: #78716c; font-size: 0.85rem; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── Responsive ── */
-    @media (max-width: 1024px) {
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-text .bio { margin-left: auto; margin-right: auto; }
+      .hero-meta { justify-content: center; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { max-width: 400px; margin: 0 auto; }
+      .platform-grid { grid-template-columns: 1fr; }
       .products-grid { grid-template-columns: 1fr; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .build-grid { grid-template-columns: 1fr; }
+      .numbers-strip { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
       .nav-links { display: none; }
-      .nav-links.open {
-        display: flex; flex-direction: column; position: absolute;
-        top: 100%; left: 0; right: 0; padding: 1rem 2rem 1.5rem;
-        background: rgba(10,10,15,0.95); backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(255,255,255,0.06);
-      }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem; background: #fff; border-bottom: 1px solid #e7e5e4; }
       .nav-toggle { display: block; }
-      .timeline::before { left: 1rem; }
-      .tl-item, .tl-item:nth-child(odd), .tl-item:nth-child(even) {
-        width: 100%; margin-left: 0; text-align: left;
-        padding-left: 3rem; padding-right: 0;
-      }
-      .tl-item:nth-child(odd) .tl-dot,
-      .tl-item:nth-child(even) .tl-dot { left: 0.35rem; right: auto; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 1.25rem; }
-    }
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.8rem; }
-      .hero-meta { flex-direction: column; align-items: center; }
+      .numbers-strip { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── Navigation ── -->
   <nav class="nav">
-    <div class="nav-logo"><span>SA</span> &middot; Portfolio</div>
+    <div class="nav-logo">Swapnil Aswale</div>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
     <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#platform">Platform</a></li>
       <li><a href="#products">Products</a></li>
+      <li><a href="#build">What I Build</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#journey">Journey</a></li>
-      <li><a href="mailto:swapnila302@gmail.com">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- ── Hero ── -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span> Building the future of AI agents</div>
-      <h1>I'm <span class="gradient">Swapnil Aswale</span></h1>
-      <p class="subtitle">AI Platform Architect and Founder of Aiventry Technologies. I build self-improving AI agents, multi-agent teams, and production-grade platforms that solve real problems.</p>
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Swapnil Aswale</h1>
+      <p class="role">AI Platform Architect · Founder, Aiventry Technologies · Builder of AgentLab</p>
+      <p class="bio">I design and build production-grade AI agent platforms, SaaS products, and multi-agent systems — from MSME legal disputes to Shopify optimization to WhatsApp business automation. Every product reflects one belief: the next breakthrough in AI is institutional memory, self-learning agents, and multi-agent orchestration.</p>
       <div class="hero-meta">
-        <span class="tag">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Pune, India
-        </span>
-        <span class="tag">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          Aiventry Technologies
-        </span>
-        <span class="tag">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          4 Products Live
-        </span>
+        <span>Pune, India</span>
+        <span>Aiventry Technologies</span>
+        <span>swapnila302@gmail.com</span>
+        <span>support@aiventry.com</span>
       </div>
       <div class="hero-actions">
-        <a href="#products" class="btn btn-primary">View My Work
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
-        </a>
-        <a href="mailto:swapnila302@gmail.com" class="btn btn-outline">Get In Touch</a>
+        <a href="#products" class="btn btn-primary">View products</a>
+        <a href="#contact" class="btn btn-outline">Contact</a>
       </div>
     </div>
-    <div class="scroll-indicator"></div>
+    <div class="hero-visual reveal">
+      <div style="font-family:'Fraunces',serif; font-weight:700; font-size:1.25rem; color:#0f766e;">By the numbers</div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">4</div><div class="stat-lbl">Products live</div></div>
+        <div class="stat-box"><div class="stat-num">950+</div><div class="stat-lbl">Tool integrations</div></div>
+        <div class="stat-box"><div class="stat-num">11</div><div class="stat-lbl">Indian languages</div></div>
+        <div class="stat-box"><div class="stat-num">4</div><div class="stat-lbl">Core microservices</div></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="sec-label reveal">About</div>
+    <h2 class="sec-title reveal">Who I Am</h2>
+    <div class="about-block reveal">
+      <p>I am an AI-first product builder and full-stack engineer based in Pune, India. I operate under <strong>Aiventry Technologies</strong>, and my flagship creation is <strong>AgentLab</strong> — an AI agent platform with a self-improving Learning Loop, triple knowledge base architecture, and 950+ tool integrations.</p>
+      <p>I build in rapid cycles: conception → docs → implementation → debugging → deployment, often within days. I prioritize production deployment and test with real users — from the Orgakawach organic store on WhatsApp to Shopify test stores and live AI visibility scans.</p>
+    </div>
   </section>
 
-  <!-- ── Stats ── -->
-  <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
-    <div class="stats-bar reveal">
-      <div class="stat"><div class="stat-number">4</div><div class="stat-label">Products Live</div></div>
-      <div class="stat"><div class="stat-number">950+</div><div class="stat-label">Tool Integrations</div></div>
-      <div class="stat"><div class="stat-number">11</div><div class="stat-label">Indian Languages</div></div>
-      <div class="stat"><div class="stat-number">4</div><div class="stat-label">Microservices</div></div>
-    </div>
+  <div class="numbers-strip reveal">
+    <div><div class="n-num">4</div><div class="n-lbl">Production products</div></div>
+    <div><div class="n-num">1</div><div class="n-lbl">In development</div></div>
+    <div><div class="n-num">2</div><div class="n-lbl">POCs / Challenges</div></div>
+    <div><div class="n-num">6</div><div class="n-lbl">Agent templates</div></div>
+    <div><div class="n-num">50+</div><div class="n-lbl">Document formats</div></div>
   </div>
 
-  <!-- ── Products ── -->
+  <section id="platform">
+    <div class="sec-label reveal">The Platform</div>
+    <h2 class="sec-title reveal">AgentLab</h2>
+    <p class="sec-desc reveal">No-code/low-code AI agent platform for building, training, and deploying self-improving agents and multi-agent teams. Powers all my products.</p>
+
+    <div class="table-wrap reveal">
+      <table>
+        <thead><tr><th>Service</th><th>Port</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Agent Service</strong></td><td>8005</td><td>Agent orchestration (Agno), teams, workflows, Composio/MCP tools, KB, sessions, memory, Learning Loop</td></tr>
+          <tr><td><strong>Knowledge Base Service</strong></td><td>8000</td><td>5 KB types (D1, D3, Semantic, Graph, Hybrid). 50+ formats, vector/keyword/agentic RAG, GraphRAG</td></tr>
+          <tr><td><strong>Job Service</strong></td><td>8001</td><td>Celery async processing: parse, chunk, embed, index. OCR, entity extraction, web scraping</td></tr>
+          <tr><td><strong>Connector Service</strong></td><td>8004</td><td>PostgreSQL, MySQL, MongoDB, DuckDB, BigQuery. Composio tools, MCP servers, triggers/webhooks</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="platform-grid reveal">
+      <div class="platform-card">
+        <h3>What makes AgentLab unique</h3>
+        <ul class="platform-list">
+          <li><strong>Agent Learning Loop</strong> — Experience capture → reflection → wisdom patterns → instruction injection. No competitor has this.</li>
+          <li><strong>Triple KB</strong> — D1 (agent core), D3 (user shared), Semantic models (NL-to-SQL).</li>
+          <li><strong>Knowledge Graph + GraphRAG</strong> — Neo4j + PgVector, entity/relationship extraction.</li>
+          <li><strong>5 Responsible AI guardrails</strong> — PII, prompt injection, toxicity, topic control, keyword blocking.</li>
+          <li><strong>Visual workflow canvas</strong> — Multi-agent orchestration, conditional logic, parallel execution.</li>
+          <li><strong>950+ tools</strong> — Composio SDK + MCP + custom.</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <h3>Stack at a glance</h3>
+        <p>Frontends: React, Vite, Tailwind, Polaris, Preact. Backends: FastAPI, Python 3.12, Celery, Redis. AI: Agno, OpenAI, Anthropic, Gemini, Groq, Cohere. Data: PostgreSQL (pgvector), Neo4j, Redis. Infra: Docker, Nginx, Sentry, Stripe.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="products">
-    <div class="section-label reveal">Products &amp; Projects</div>
-    <h2 class="section-title reveal">What I've Built</h2>
-    <p class="section-desc reveal">From AI agent platforms to WhatsApp automation to Shopify apps &mdash; every product is built on a single horizontal platform.</p>
+    <div class="sec-label reveal">Products &amp; Projects</div>
+    <h2 class="sec-title reveal">What I've Built</h2>
+    <p class="sec-desc reveal">Every product is a vertical built on the same horizontal AgentLab platform.</p>
 
     <div class="products-grid">
-
-      <!-- AgentLab -->
       <div class="product-card reveal">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(99,102,241,0.12);">&#x1F9E0;</div>
-          <span class="status-pill status-live">Live</span>
-        </div>
-        <div class="card-title">AgentLab</div>
-        <p class="card-desc">No-code AI agent platform with self-improving Learning Loop, triple knowledge base, GraphRAG, 5 guardrails, and visual multi-agent workflow canvas.</p>
-        <div class="card-tech">
-          <span class="tech-tag">FastAPI</span><span class="tech-tag">Agno</span><span class="tech-tag">React</span>
-          <span class="tech-tag">pgvector</span><span class="tech-tag">Neo4j</span><span class="tech-tag">Celery</span>
-        </div>
-        <a href="https://agentlb.com" target="_blank" class="card-link">agentlb.com <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <div class="card-top"><span class="card-title">AgentLab</span><span class="status status-live">Live</span></div>
+        <p class="card-desc">The core AI agent platform — self-improving Learning Loop, triple KB, GraphRAG, 5 guardrails, visual workflow canvas.</p>
+        <div class="card-features">Tech: FastAPI, Agno, React, pgvector, Neo4j, Celery</div>
+        <a href="https://agentlb.com" target="_blank" class="card-link">agentlb.com →</a>
       </div>
-
-      <!-- Geovantax -->
       <div class="product-card reveal">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(34,197,94,0.12);">&#x1F50D;</div>
-          <span class="status-pill status-live">Live</span>
-        </div>
-        <div class="card-title">Geovantax</div>
-        <p class="card-desc">AI Search Visibility SaaS &mdash; monitor and improve your brand's presence in ChatGPT, Gemini, Claude, Perplexity. Prompt tracking, audits, optimizer, llms.txt.</p>
-        <div class="card-tech">
-          <span class="tech-tag">FastAPI</span><span class="tech-tag">React</span><span class="tech-tag">Stripe</span>
-          <span class="tech-tag">Crawl4AI</span><span class="tech-tag">Sentry</span>
-        </div>
-        <a href="https://geovantax.com" target="_blank" class="card-link">geovantax.com <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <div class="card-top"><span class="card-title">Geovantax</span><span class="status status-live">Live</span></div>
+        <p class="card-desc">AI Search Visibility SaaS — monitor and improve brand presence in ChatGPT, Gemini, Claude, Perplexity.</p>
+        <div class="card-features">Prompt tracking, BVI, AI/GEO audits, content optimizer, llms.txt, competitor tracking, Stripe billing.</div>
+        <a href="https://geovantax.com" target="_blank" class="card-link">geovantax.com →</a>
       </div>
-
-      <!-- AIVentry -->
       <div class="product-card reveal">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(34,211,238,0.12);">&#x1F4AC;</div>
-          <span class="status-pill status-live">Live</span>
-        </div>
-        <div class="card-title">AIVentry</div>
-        <p class="card-desc">WhatsApp AI automation agency &mdash; "AI Employees" for businesses. Lead qualification, order management, FAQ, booking agents. 48-hour deployment.</p>
-        <div class="card-tech">
-          <span class="tech-tag">FastAPI</span><span class="tech-tag">React</span><span class="tech-tag">WhatsApp API</span>
-          <span class="tech-tag">Composio</span><span class="tech-tag">Framer Motion</span>
-        </div>
-        <a href="https://aiventry.com" target="_blank" class="card-link">aiventry.com <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <div class="card-top"><span class="card-title">AIVentry</span><span class="status status-live">Live</span></div>
+        <p class="card-desc">WhatsApp AI automation agency — "AI Employees" for lead qualification, orders, FAQ, booking. 48-hour deployment.</p>
+        <div class="card-features">Marketing site + client dashboard API, 6 agent types, 6 industries.</div>
+        <a href="https://aiventry.com" target="_blank" class="card-link">aiventry.com →</a>
       </div>
-
-      <!-- Shopify AEO -->
       <div class="product-card reveal">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(234,179,8,0.12);">&#x1F6CD;</div>
-          <span class="status-pill status-live">Live</span>
-        </div>
-        <div class="card-title">Shopify AEO Optimizer</div>
-        <p class="card-desc">AI Visibility for Shopify stores &mdash; AEO/GEO audits, AI content rewriting, dynamic llms.txt catalog, and visibility monitoring. App Store ready.</p>
-        <div class="card-tech">
-          <span class="tech-tag">Shopify Polaris</span><span class="tech-tag">FastAPI</span><span class="tech-tag">OAuth</span>
-          <span class="tech-tag">GraphQL</span><span class="tech-tag">Webhooks</span>
-        </div>
-        <a href="https://aeo.agentlb.com" target="_blank" class="card-link">aeo.agentlb.com <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        <div class="card-top"><span class="card-title">Shopify AEO Optimizer</span><span class="status status-live">Live</span></div>
+        <p class="card-desc">AI Visibility for Shopify — AEO/GEO audits, AI content rewriting, llms.txt catalog, visibility monitoring. Free / $19 / $49 / $99.</p>
+        <div class="card-features">Polaris, OAuth, webhooks, GraphQL billing.</div>
+        <a href="https://aeo.agentlb.com" target="_blank" class="card-link">aeo.agentlb.com →</a>
       </div>
-
-      <!-- ShopBrain -->
       <div class="product-card reveal">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(249,115,22,0.12);">&#x1F916;</div>
-          <span class="status-pill status-dev">In Dev</span>
-        </div>
-        <div class="card-title">ShopBrain</div>
-        <p class="card-desc">AI sales assistant for Shopify storefronts &mdash; embeddable chat widget with customer memory, self-learning, guided selling, and revenue attribution.</p>
-        <div class="card-tech">
-          <span class="tech-tag">Preact</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Polaris</span>
-          <span class="tech-tag">Theme Extension</span><span class="tech-tag">Memory</span>
-        </div>
-        <span class="card-link" style="color:#64748b;cursor:default;">Coming soon</span>
+        <div class="card-top"><span class="card-title">ShopBrain</span><span class="status status-dev">In dev</span></div>
+        <p class="card-desc">AI sales assistant for Shopify storefronts — Preact chat widget, customer memory, self-learning, revenue attribution.</p>
+        <div class="card-features">ShopBrain backend (8009), UI (8010), Theme App Extension.</div>
+        <span style="font-size:0.85rem; color:#78716c;">Coming soon</span>
       </div>
-
-      <!-- NyayaSetu -->
       <div class="product-card reveal">
-        <div class="card-header">
-          <div class="card-icon" style="background:rgba(244,63,94,0.12);">&#x2696;</div>
-          <span class="status-pill status-poc">POC</span>
-        </div>
-        <div class="card-title">NyayaSetu</div>
-        <p class="card-desc">AI Virtual Negotiation Assistant for MSME delayed payment disputes &mdash; 5-agent team (Intake, Document, Prediction, Negotiation, Drafting) for IndiaAI 2026.</p>
-        <div class="card-tech">
-          <span class="tech-tag">Multi-Agent</span><span class="tech-tag">GraphRAG</span><span class="tech-tag">Sarvam AI</span>
-          <span class="tech-tag">11 Languages</span><span class="tech-tag">OCR</span>
-        </div>
-        <span class="card-link" style="color:#64748b;cursor:default;">IndiaAI Challenge 2026</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Skills ── -->
-  <section id="skills" class="skills-section">
-    <div class="section-label reveal">Skills &amp; Technologies</div>
-    <h2 class="section-title reveal">My Tech Stack</h2>
-    <p class="section-desc reveal">Focused on AI-first development &mdash; from LLM orchestration to full-stack product delivery.</p>
-
-    <div class="skills-group reveal">
-      <div class="skills-group-title">AI / ML</div>
-      <div class="skill-pills">
-        <span class="skill-pill highlight">Agno</span>
-        <span class="skill-pill highlight">OpenAI</span>
-        <span class="skill-pill highlight">Anthropic</span>
-        <span class="skill-pill">Google Gemini</span>
-        <span class="skill-pill">Groq</span>
-        <span class="skill-pill">Cohere</span>
-        <span class="skill-pill highlight">RAG</span>
-        <span class="skill-pill highlight">GraphRAG</span>
-        <span class="skill-pill">Composio</span>
-        <span class="skill-pill">MCP</span>
-        <span class="skill-pill">Sarvam AI</span>
-        <span class="skill-pill">Crawl4AI</span>
-      </div>
-    </div>
-
-    <div class="skills-group reveal">
-      <div class="skills-group-title">Backend</div>
-      <div class="skill-pills">
-        <span class="skill-pill highlight">Python</span>
-        <span class="skill-pill highlight">FastAPI</span>
-        <span class="skill-pill">Celery</span>
-        <span class="skill-pill">SQLAlchemy</span>
-        <span class="skill-pill">Alembic</span>
-        <span class="skill-pill">Uvicorn</span>
-        <span class="skill-pill">Gunicorn</span>
-      </div>
-    </div>
-
-    <div class="skills-group reveal">
-      <div class="skills-group-title">Frontend</div>
-      <div class="skill-pills">
-        <span class="skill-pill highlight">React</span>
-        <span class="skill-pill highlight">TypeScript</span>
-        <span class="skill-pill">Vite</span>
-        <span class="skill-pill">Tailwind CSS</span>
-        <span class="skill-pill">Preact</span>
-        <span class="skill-pill">Shopify Polaris</span>
-        <span class="skill-pill">ReactFlow</span>
-        <span class="skill-pill">Recharts</span>
-        <span class="skill-pill">Framer Motion</span>
-      </div>
-    </div>
-
-    <div class="skills-group reveal">
-      <div class="skills-group-title">Data &amp; Databases</div>
-      <div class="skill-pills">
-        <span class="skill-pill highlight">PostgreSQL</span>
-        <span class="skill-pill highlight">pgvector</span>
-        <span class="skill-pill">Redis</span>
-        <span class="skill-pill">Neo4j</span>
-        <span class="skill-pill">MongoDB</span>
-        <span class="skill-pill">MySQL</span>
-        <span class="skill-pill">DuckDB</span>
-      </div>
-    </div>
-
-    <div class="skills-group reveal">
-      <div class="skills-group-title">Infrastructure &amp; DevOps</div>
-      <div class="skill-pills">
-        <span class="skill-pill highlight">Docker</span>
-        <span class="skill-pill">Docker Compose</span>
-        <span class="skill-pill">Nginx</span>
-        <span class="skill-pill">GitHub Actions</span>
-        <span class="skill-pill">Sentry</span>
-        <span class="skill-pill">Stripe</span>
-        <span class="skill-pill">Playwright</span>
+        <div class="card-top"><span class="card-title">NyayaSetu</span><span class="status status-poc">POC</span></div>
+        <p class="card-desc">AI Virtual Negotiation Assistant for MSME delayed payment disputes — 5-agent team for IndiaAI Innovation Challenge 2026 (₹5.25 Cr).</p>
+        <div class="card-features">Supervisor + Intake, Document, Prediction, Negotiation, Drafting. 11 Indian languages, Sarvam AI, GraphRAG.</div>
+        <span style="font-size:0.85rem; color:#78716c;">IndiaAI 2026</span>
       </div>
     </div>
   </section>
 
-  <!-- ── Journey / Timeline ── -->
+  <section id="build">
+    <div class="sec-label reveal">Philosophy</div>
+    <h2 class="sec-title reveal">What I'm Building With AI</h2>
+    <p class="sec-desc reveal">One thesis: AI agents should learn, remember, and get better — like human employees.</p>
+    <div class="build-grid reveal">
+      <div class="build-item"><span class="num">1</span><div><div class="title">Self-Improving Agents</div><div class="text">Learning Loop captures experience, reflects, extracts wisdom patterns, injects back into instructions.</div></div></div>
+      <div class="build-item"><span class="num">2</span><div><div class="title">Multi-Agent Teams</div><div class="text">Specialist teams, not monolithic chatbots — NyayaSetu's 5-agent legal team, ShopBrain sales team.</div></div></div>
+      <div class="build-item"><span class="num">3</span><div><div class="title">Knowledge-First AI</div><div class="text">Triple KB + Knowledge Graphs so agents reason over structured, domain-specific knowledge.</div></div></div>
+      <div class="build-item"><span class="num">4</span><div><div class="title">AI for India</div><div class="text">NyayaSetu (11 languages), Kissan Voice Agent, Orgakawach — AI for the underserved.</div></div></div>
+      <div class="build-item"><span class="num">5</span><div><div class="title">AI Visibility as a category</div><div class="text">Geovantax and Shopify AEO — "how visible is your brand to AI?" as important as SEO.</div></div></div>
+      <div class="build-item"><span class="num">6</span><div><div class="title">Vertical SaaS on one platform</div><div class="text">AgentLab is horizontal; Geovantax, AIVentry, ShopBrain, NyayaSetu are verticals. Build once, launch fast.</div></div></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-label reveal">Skills &amp; Technologies</div>
+    <h2 class="sec-title reveal">Tech Stack</h2>
+    <div class="skills-cat reveal"><h4>AI / ML</h4><div class="skills-pills"><span class="skill-pill hl">Agno</span><span class="skill-pill hl">OpenAI</span><span class="skill-pill hl">Anthropic</span><span class="skill-pill">Gemini</span><span class="skill-pill">Groq</span><span class="skill-pill">Cohere</span><span class="skill-pill hl">RAG</span><span class="skill-pill hl">GraphRAG</span><span class="skill-pill">Composio</span><span class="skill-pill">MCP</span><span class="skill-pill">Sarvam AI</span><span class="skill-pill">Crawl4AI</span></div></div>
+    <div class="skills-cat reveal"><h4>Backend</h4><div class="skills-pills"><span class="skill-pill hl">Python</span><span class="skill-pill hl">FastAPI</span><span class="skill-pill">Celery</span><span class="skill-pill">SQLAlchemy</span><span class="skill-pill">Alembic</span><span class="skill-pill">Uvicorn</span></div></div>
+    <div class="skills-cat reveal"><h4>Frontend</h4><div class="skills-pills"><span class="skill-pill hl">React</span><span class="skill-pill hl">TypeScript</span><span class="skill-pill">Vite</span><span class="skill-pill">Tailwind</span><span class="skill-pill">Preact</span><span class="skill-pill">Polaris</span><span class="skill-pill">ReactFlow</span><span class="skill-pill">Recharts</span><span class="skill-pill">Framer Motion</span></div></div>
+    <div class="skills-cat reveal"><h4>Data &amp; Infra</h4><div class="skills-pills"><span class="skill-pill hl">PostgreSQL</span><span class="skill-pill hl">pgvector</span><span class="skill-pill">Redis</span><span class="skill-pill">Neo4j</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Docker</span><span class="skill-pill">Nginx</span><span class="skill-pill">Sentry</span><span class="skill-pill">Stripe</span></div></div>
+  </section>
+
   <section id="journey">
-    <div class="section-label reveal">Journey</div>
-    <h2 class="section-title reveal">How It All Came Together</h2>
-    <p class="section-desc reveal">Key milestones in building AgentLab and the products around it.</p>
-
+    <div class="sec-label reveal">Journey</div>
+    <h2 class="sec-title reveal">Key Milestones</h2>
     <div class="timeline">
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Early 2026</div>
-          <div class="tl-title">AgentLab Platform Built</div>
-          <div class="tl-desc">Designed and deployed 4 core microservices &mdash; Agent, KB, Job, Connector &mdash; with React UI. The foundation for everything that followed.</div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Feb 2026</div>
-          <div class="tl-title">AIVentry Launched</div>
-          <div class="tl-desc">Built and launched aiventry.com &mdash; WhatsApp AI automation agency with marketing site, client dashboard API, and 6 agent types across 6 industries.</div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Feb 2026</div>
-          <div class="tl-title">Orgakawach WhatsApp Pilot</div>
-          <div class="tl-desc">First real-world production agent &mdash; AI-powered order management for an organic store in Pune via WhatsApp. Hindi, English, Marathi support.</div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Feb 2026</div>
-          <div class="tl-title">Knowledge Graph &amp; Learning Loop</div>
-          <div class="tl-desc">Completed GraphRAG (Neo4j + pgvector) and Agent Learning Loop (experience capture, reflection, wisdom patterns, instruction injection).</div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Feb 2026</div>
-          <div class="tl-title">NyayaSetu &mdash; IndiaAI Challenge</div>
-          <div class="tl-desc">Submitted 5-agent MSME ODR solution for the IndiaAI Innovation Challenge 2026. Supervisor + 5 specialist agents, 11 Indian languages, GraphRAG legal precedents.</div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Feb 2026</div>
-          <div class="tl-title">Shopify AEO Optimizer</div>
-          <div class="tl-desc">Built a Shopify app framework and first app &mdash; AEO/GEO audits, AI content optimization, llms.txt generation, visibility monitoring. Deployed at aeo.agentlb.com.</div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Mar 2026</div>
-          <div class="tl-title">Geovantax Launched</div>
-          <div class="tl-desc">Launched AI Search Visibility SaaS at geovantax.com &mdash; prompt tracking, brand visibility index, AI audits, content optimizer, Stripe billing, full SEO.</div>
-        </div>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-date">Mar 2026</div>
-          <div class="tl-title">ShopBrain In Development</div>
-          <div class="tl-desc">Building an AI sales assistant for Shopify &mdash; Preact chat widget, customer memory, self-learning, guided selling, revenue attribution.</div>
-        </div>
-      </div>
-
+      <div class="tl-item reveal"><div class="tl-date">Early 2026</div><div class="tl-title">AgentLab platform built</div><div class="tl-desc">4 microservices (Agent, KB, Job, Connector) + React UI deployed at agentlb.com.</div></div>
+      <div class="tl-item reveal"><div class="tl-date">Feb 2026</div><div class="tl-title">AIVentry launched</div><div class="tl-desc">aiventry.com live — WhatsApp AI agency, 6 agent types, client dashboard API.</div></div>
+      <div class="tl-item reveal"><div class="tl-date">Feb 2026</div><div class="tl-title">Orgakawach WhatsApp pilot</div><div class="tl-desc">First production agent — organic store in Pune, Hindi/English/Marathi, order management.</div></div>
+      <div class="tl-item reveal"><div class="tl-date">Feb 2026</div><div class="tl-title">Knowledge Graph &amp; Learning Loop</div><div class="tl-desc">GraphRAG (Neo4j + pgvector) and Agent Learning Loop (reflection, wisdom patterns, injection) completed.</div></div>
+      <div class="tl-item reveal"><div class="tl-date">Feb 2026</div><div class="tl-title">NyayaSetu — IndiaAI Challenge</div><div class="tl-desc">5-agent MSME ODR solution submitted; 11 Indian languages, Sarvam AI, GraphRAG.</div></div>
+      <div class="tl-item reveal"><div class="tl-date">Feb 2026</div><div class="tl-title">Shopify AEO Optimizer</div><div class="tl-desc">Framework + first app — aeo.agentlb.com, AEO/GEO audits, llms.txt, App Store ready.</div></div>
+      <div class="tl-item reveal"><div class="tl-date">Mar 2026</div><div class="tl-title">Geovantax launched</div><div class="tl-desc">AI Search Visibility SaaS at geovantax.com — Stripe, Resend, Sentry, full SEO.</div></div>
+      <div class="tl-item reveal"><div class="tl-date">Mar 2026</div><div class="tl-title">ShopBrain in development</div><div class="tl-desc">Preact widget, memory, learning, revenue attribution.</div></div>
     </div>
   </section>
 
-  <!-- ── What I Believe ── -->
-  <section style="text-align:center; max-width:700px;">
-    <div class="section-label reveal">Philosophy</div>
-    <h2 class="section-title reveal" style="margin-bottom:1.5rem;">What I Believe</h2>
-    <blockquote class="reveal" style="font-size:1.15rem; color:#cbd5e1; font-style:italic; line-height:1.7; border-left:3px solid #6366f1; padding-left:1.5rem; text-align:left;">
-      "AI agents should learn, remember, and get better at their job &mdash; just like human employees. The next breakthrough isn't the model. It's institutional memory, self-learning, and multi-agent orchestration."
-    </blockquote>
+  <section>
+    <div class="two-col">
+      <div class="reveal">
+        <div class="sec-label">Agent Templates</div>
+        <h2 class="sec-title">Blueprints &amp; Samples</h2>
+        <ul class="list-plain">
+          <li>Content Generation Agent</li>
+          <li>LinkedIn Post Publisher</li>
+          <li>Orgakawach LinkedIn Image Post</li>
+          <li>NanoBanana Image Generator</li>
+          <li>Workspace Assistant Team</li>
+          <li>Lead Generation Agent</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="sec-label">POCs &amp; Research</div>
+        <h2 class="sec-title">Ideas &amp; Challenges</h2>
+        <p class="sec-desc">Kissan Voice AI Agent (Lyzr + Sarvam). IndiaAI 2026 (NyayaSetu). 25+ vertical AI SaaS ideas; competitive analysis vs OpenClaw, Thesys, GenSpark, Lyzr, N8N, CrewAI. Blue ocean: AI SMB OS, Multi-Agent Consultant, AI Franchise Brain.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- ── Footer ── -->
+  <section id="contact">
+    <div class="sec-label reveal">Contact</div>
+    <h2 class="sec-title reveal">Get In Touch</h2>
+    <div class="two-col">
+      <div class="contact-box reveal">
+        <h3>Direct</h3>
+        <p><strong>Email</strong> <a href="mailto:swapnila302@gmail.com">swapnila302@gmail.com</a></p>
+        <p><strong>Support</strong> <a href="mailto:support@aiventry.com">support@aiventry.com</a></p>
+        <p><strong>Phone</strong> +91 9822440555</p>
+        <p><strong>WhatsApp (AIVentry demo)</strong> +91 8308 989 168</p>
+        <p><strong>Location</strong> Pune, India</p>
+      </div>
+      <div class="reveal">
+        <h3 class="sec-title">Live domains</h3>
+        <div class="domains-grid">
+          <a href="https://agentlb.com" target="_blank">agentlb.com</a>
+          <a href="https://geovantax.com" target="_blank">geovantax.com</a>
+          <a href="https://aiventry.com" target="_blank">aiventry.com</a>
+          <a href="https://aeo.agentlb.com" target="_blank">aeo.agentlb.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <div class="footer-links">
-      <a href="mailto:swapnila302@gmail.com" title="Email">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-      <a href="https://github.com/swapnilaswale" target="_blank" title="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      </a>
-      <a href="https://agentlb.com" target="_blank" title="AgentLab">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </a>
-      <a href="https://aiventry.com" target="_blank" title="AIVentry">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-      </a>
-    </div>
-    <p>&copy; 2026 Swapnil Aswale &middot; Aiventry Technologies &middot; Pune, India</p>
+    <p>&copy; 2026 Swapnil Aswale · Aiventry Technologies · Pune, India</p>
   </footer>
 
-  <!-- ── JS: Scroll Reveal ── -->
   <script>
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => observer.observe(el));
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('open');
-      });
+    document.querySelectorAll('.reveal').forEach(el => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      obs.observe(el);
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
     });
   </script>
-
 </body>
 </html>
